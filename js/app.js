@@ -42,14 +42,12 @@ function calculo(evento){
         
         mostrarAlerta(" TODO LOS CAMPOS SON OBLIGATIORIOS", "error");
     }else if (calcular() > 20) {
-        
         mostrarAlerta(" NOTA NO VALIDA ", "error");
-    } else if (calcular() >= 10.6){
-
-        Resultado.textContent = ` ✅ Nota Aprobatoria:  ${calcular()}`;
+    } else if (calcular() >= 10.60){
+        Resultado.textContent = ` ✅ Nota Aprobatoria:  ${calcular().toFixed(1)}`;
     }else{
 
-        Resultado.textContent = ` ❌ Nota No Aprobatoria:  ${calcular()}`;
+        Resultado.textContent = ` ❌ Nota No Aprobatoria:  ${calcular().toFixed(1)}`;
     }      
     
 }
@@ -61,7 +59,7 @@ function calculo(evento){
 function validar(e){
 
     notas[e.target.id]=e.target.value
-    console.log(notas)
+    
 
 }
 
@@ -90,7 +88,7 @@ function mostrarAlerta(mensaje, error = null ){
     
     setTimeout(() => {
         alerta.remove();
-    }, 4000);
+    }, 2000);
 }
 
 
